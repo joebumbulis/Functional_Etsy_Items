@@ -153,10 +153,19 @@ console.log(matItems);
 var ansFive = document.querySelector('#ans5')
 ansFive.innerHTML = matItems;
 
-var matList = lotsOfMat.map(function(item, i, arr){
+var matArr = lotsOfMat.map(function(item, i, arr){
   return item.materials
-console.log(matList);
 });
+console.log(matArr);
+//attaching nodes of lists
+// var matList = matArr.forEach(function(item, i, arr){
+//   var divChild = document.createElement(ul)
+//   var text = document.createTextNode(ul)
+//   divChild = document.querySelecter(#ans5)
+//   //text = div?
+//   var listItem = '<li>'+item.materials+ '</li>'
+//   ul.innerHTML += listItem
+// })
 
 // var ansFive = document.querySelector('#ans5')
 // ansFive.innerHTML = matList;
