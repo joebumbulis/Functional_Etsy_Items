@@ -46,20 +46,41 @@ console.log('QUESTION2');
 //put the objects with a price between 14 and 18 in a new array
 //place that new array on the DOM
 
-var btmRange = items.filter(function(item, i, arr){
+var midArr = items.filter(function(item, i, arr){
   if (item.price > 14){
     if (item.price < 18){
-      return item.price;
+      return item.title;
     }
   }
 });
-console.log(btmRange);
+console.log(midArr);
 
+var titles = midArr.map(function(item, i, array){
+  return '<div>'+item.title+'</div>'
+})
+console.log(titles);
 
+var ansTwo = document.querySelector('#ans2')
+ansTwo.innerHTML =  titles;
 //Q3
 //Which item has a "GBP" currency code? Display it's name and price.
 //answer
 //  1970s Schlitz Malt Liquor Glass Beer Pitcher costs £18
+
+//look through the array and find the GBP by making it set to a true statement
+//
+
+var gbp = items.filter(function(item, i, arr){
+  return item.currency_code === 'GBP'
+})
+console.log(gbp)
+var britishCurr = gbp.map(function(item, i, array){
+  return '<div>'+item.title+'</div>'
+})
+console.log(titles);
+
+var ansThree = document.querySelector('#ans3')
+ansThree.innerHTML = britishCurr;
 
 //Q4
 //Display a list of all items who are made of wood.
@@ -73,6 +94,20 @@ console.log(btmRange);
 //  Magnetic Wall Mount Bottle Opener Barware Set - Stainless Steel or Black - Personalized if you like! is made of wood.
 
 //  Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
+
+//filter by materials then filter by wood
+var material = items.filter(function(item, i, arr){
+  var mat =  item.material
+  mat = 
+})
+console.log(material);
+// var britishCurr = gbp.map(function(item, i, array){
+//   return '<div>'+item.title+'</div>'
+// })
+// console.log(titles);
+//
+// var ansThree = document.querySelector('#ans3')
+// ansThree.innerHTML = britishCurr;
 
 
 //Q5
