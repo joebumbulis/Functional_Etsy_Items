@@ -49,6 +49,12 @@ div {
   padding-bottom: 4rem;
 }
 
+ul {
+  list-style: none;
+  text-align: left;
+  margin-left: 3rem;
+}
+
 footer {
   text-align: center;
   background: #3A383F;
