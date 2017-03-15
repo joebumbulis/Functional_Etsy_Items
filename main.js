@@ -96,19 +96,21 @@ ansThree.innerHTML = britishCurr;
 //  Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
 
 //filter by materials then filter by wood
-var material = items.filter(function(item, i, arr){
-  var mat =  item.material
-  mat = 
-})
-console.log(material);
-// var britishCurr = gbp.map(function(item, i, array){
-//   return '<div>'+item.title+'</div>'
-// })
-// console.log(titles);
-//
-// var ansThree = document.querySelector('#ans3')
-// ansThree.innerHTML = britishCurr;
+//sort through the array and pull out the objects if one of the materials in the material array is wood
+var wood = items.filter(function(item, i, array){
+  return item.materials.some(function(item, i, array){
+    return item === 'wood'
+  });
+});
+console.log(wood);
 
+var woodItems = wood.map(function(item, i, arr){
+  return '<div>'+item.title+'</div>'
+})
+console.log(titles);
+
+var ansFour = document.querySelector('#ans4')
+ansFour.innerHTML = woodItems;
 
 //Q5
 //Which items are made of eight or more materials? Display the name, number of items and the items it is made of.
