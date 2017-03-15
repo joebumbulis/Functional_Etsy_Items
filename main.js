@@ -145,30 +145,34 @@ var lotsOfMat = items.filter(function(item, i, array){
   return item.materials.length >=8
 })
 console.log(lotsOfMat);
+//
 
-var matItems = lotsOfMat.map(function(item, i, array){
-  return '<div>'+item.title+'</div>'
+
+var matItems = lotsOfMat.forEach(function(item, i, arr){
+  var ul = document.querySelector('#listOfMaterials');
+  ul.innerHTML += '<span>'+item.title+' has '+ item.materials.length +' materials:</span>';
+  item.materials.forEach(function(mat, i, arr){
+  ul.innerHTML += '<li>'+mat+'</li>';
+  })
 })
-console.log(matItems);
-var ansFive = document.querySelector('#ans5')
-ansFive.innerHTML = matItems;
 
-var matArr = lotsOfMat.map(function(item, i, arr){
-  return item.materials
-});
-console.log(matArr);
-//attaching nodes of lists
-// var matList = matArr.forEach(function(item, i, arr){
-//   var divChild = document.createElement(ul)
-//   var text = document.createTextNode(ul)
-//   divChild = document.querySelecter(#ans5)
-//   //text = div?
-//   var listItem = '<li>'+item.materials+ '</li>'
-//   ul.innerHTML += listItem
-// })
+//previous work
+// var matItems = lotsOfMat.map(function(item, i, array){
+//   var ul = document.querySelector('#listOfMaterials');
+//   var listItem = '<li>'+item.materials+'</li>';
+//   ul.innerHTML += listItem;
+//   return '<div>'+item.title+' has ' + item.materials.length + ' materials'  + listItem + '</div>'
+// });
+//
+// // console.log(matItems);
+// var ansFive = document.querySelector('#ans5');
+// ansFive.innerHTML = matItems;
+//
+// var matArr = lotsOfMat.map(function(item, i, arr){
+//   return item.materials
+// });
+// console.log(matArr);
 
-// var ansFive = document.querySelector('#ans5')
-// ansFive.innerHTML = matList;
 
 
 //Q6
