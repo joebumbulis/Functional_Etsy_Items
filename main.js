@@ -1,6 +1,6 @@
 console.log('Hi')
 
-console.log('items');
+console.log(items);
 //Question 1:
 //Show me how to calculate the average price of all items.
 //  The average price is $23.63
@@ -18,10 +18,95 @@ var sum = priceArr.reduce(function(acc, val){
 })
 console.log(sum)
 
-function ans1(sum, total){
+
+function avg (sum, total) {
   return sum / total.length
 }
-console.log(ans1(sum, priceArr));
+
+console.log(avg(sum, priceArr));
 
 var ans = document.querySelector('#ans1')
-ans.innerHTML =  'The average price is '+ ans1(sum, priceArr) +'.';
+ans.innerHTML =  'The average price is '+ avg(sum, priceArr) +'.';
+
+
+//Q2
+//Show me how to get an array of items that cost between $14.00 and $18.00 USD
+//answer
+// 1970s Coors Banquet Glass Beer Pitcher
+
+//  The Three Broomsticks Customizable Beer Stein Mug, Harry Potter Inspired, hogsmeade village, harry potter gift, three broomsticks mug
+
+//  Hand Painted Colorful Feather Glass
+console.log('QUESTION2');
+//take all items with a cost >= 14 and <= 18 and put into a new array
+//display their titles
+//filter out items above 18 and put them into an array
+//filter out items below 14 and put those in an array - that array is your answer
+//for each oject in the array, check to see if the price is between 14 and 18
+//put the objects with a price between 14 and 18 in a new array
+//place that new array on the DOM
+
+var btmRange = items.filter(function(item, i, arr){
+  if (item.price > 14){
+    if (item.price < 18){
+      return item.price;
+    }
+  }
+});
+console.log(btmRange);
+
+
+//Q3
+//Which item has a "GBP" currency code? Display it's name and price.
+//answer
+//  1970s Schlitz Malt Liquor Glass Beer Pitcher costs £18
+
+//Q4
+//Display a list of all items who are made of wood.
+//answer//
+//  SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
+
+//  Bottle cap catcher personalized. Man cave gift for him- Wooden Beer pub sign - Groomsmen wedding Gift is made of wood.
+
+//  Medium Size, Welcome To Our Firepit-Where Friends And Marshmallows Get Toasted At The Same Time-Painted Wood Sign-Custom Colors is made of wood.
+//
+//  Magnetic Wall Mount Bottle Opener Barware Set - Stainless Steel or Black - Personalized if you like! is made of wood.
+
+//  Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
+
+
+//Q5
+//Which items are made of eight or more materials? Display the name, number of items and the items it is made of.
+//answer
+//  Qty of 2 Groomsmen Gift - Stainless Steel Personalized Bottle Opener - NO Capcatcher has 9 materials:
+  // wall mount bottle opener
+  // wedding
+  // man cave
+  // christmas gift
+  // guy gift
+  // fathers day
+  // home bar
+  // beer
+  // bar
+  //
+  // The Three Broomsticks Customizable Beer Stein Mug, Harry Potter  Inspired, hogsmeade village, harry potter gift, three broomsticks mug  has 13 materials:
+  //
+  // glass
+  // sandblast cabinet
+  // vinyl
+  // beer glass
+  // pint glass
+  // etched pint glass
+  // etched glass
+  // etched beer glass
+  // 16 oz pint
+  // beer gift
+  // etched harry potter glass
+  // the three broomsticks glass
+  // personalized harry potter glass
+
+
+//Q6
+//How many items were made by their sellers?
+//answer//
+//  18 were made by their sellers
