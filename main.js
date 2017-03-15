@@ -141,9 +141,46 @@ ansFour.innerHTML = woodItems;
   // etched harry potter glass
   // the three broomsticks glass
   // personalized harry potter glass
+var lotsOfMat = items.filter(function(item, i, array){
+  return item.materials.length >=8
+})
+console.log(lotsOfMat);
+
+var matItems = lotsOfMat.map(function(item, i, array){
+  return '<div>'+item.title+'</div>'
+})
+console.log(matItems);
+var ansFive = document.querySelector('#ans5')
+ansFive.innerHTML = matItems;
+
+var matList = lotsOfMat.map(function(item, i, arr){
+  return item.materials
+console.log(matList);
+});
+
+// var ansFive = document.querySelector('#ans5')
+// ansFive.innerHTML = matList;
 
 
 //Q6
 //How many items were made by their sellers?
 //answer//
 //  18 were made by their sellers
+
+var sellerMade = items.filter(function(item, i, arr){
+  if (item.who_made === 'i_did')
+    return item.title.length
+})
+
+var totalSellerMade = sellerMade.length;
+
+var ansSix = document.querySelector('#ans6')
+ansSix.innerHTML = totalSellerMade + ' were made by their sellers.';
+
+
+
+// sellerMade.map(function(item, i, array){
+//   return items.length;
+// })
+console.log(sellerMade);
+console.log(totalSellerMade);
